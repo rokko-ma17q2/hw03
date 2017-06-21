@@ -76,7 +76,8 @@ pwtworld_1960 <- pwt_world %>%
   filter(year == 1960 & gdp_per_capita >= 0) %>%
   select(country, gdp_per_capita)
 
-world_converge <- merge.data.frame(growth_world, pwtworld_1960, by = "country" , all = F)
+world_converge <- merge.data.frame(growth_world, pwtworld_1960,
+                                   by = "country" , all = F)
 colnames(world_converge) <- c("country", "growth", "income_level_1960")
 ```
 
@@ -101,7 +102,10 @@ Alternatively, we can create a more visually meaningful plot by making use of th
 
 ``` {r}
 library(ggplot2)
-p_world <- ggplot(world_converge, aes(x = world_converge[,3], y = world_converge[,2], label = country)) + geom_point() + geom_text(aes(label=country))
+p_world <- ggplot(world_converge, aes(x = world_converge[,3],
+                                      y = world_converge[,2],
+                                      label = country)) + geom_point(
+                                      ) + geom_text(aes(label=country))
 ```
 
 Using the ggplot() function we can also add an OLS type regression line to get a visual clue of whether there is correlation between income levels in 1960 and the convergence rate.  
@@ -109,7 +113,9 @@ Using the ggplot() function we can also add an OLS type regression line to get a
 Note that in this case we didnt make an lm object, instead geom_smooth with the lm method runs an lm(y ~ x) as supplied into the ggplot function by the columns in the dataframe in the aes() argument.
 
 ``` {r}
-p_world + geom_smooth(method = lm) + labs(x = "gdp per worker in 1960 in USD", y = "average growth 1960-2014 in %", title = "Lack of Convergence in the World")
+p_world + geom_smooth(method = lm) + labs(x = "gdp per worker in 1960 in USD",
+                                          y = "average growth 1960-2014 in %",
+                                          title = "Lack of Convergence in the World")
 ```
 
 Just as before, doesn't look like we have evidence of the convergence here. Perhaps the convergence is sensitive to the choice of countries. As an exercise, to improve your familiarity with the tools you have used in solving hw02, you will be asked to recreate these steps for the case of OECD countries. 
@@ -156,6 +162,3 @@ You can use this as a guide for the potential relationships to explore within th
 3) Using the same subset as in (2) fit a bivariate model of both human capital and capital per labour. How does this model compare with the previous?
 
 4) Choose a variable (or variables) in pwt and check their growth empirics. Justify your choice of variable(s).
-
-# References {-}
-
