@@ -1,0 +1,34 @@
+---
+title: 'hw03: Run simple linear models in R and interpret the outputs'
+author: |
+
+date: '`r format(Sys.time(), "%Y/%m/%d")`'
+output:
+  bookdown::pdf_document2:
+    fig_caption: yes
+    includes:
+      in_header: asset/latex/custom.sty
+    keep_tex: no
+    latex_engine: pdflatex
+    number_sections: yes
+    template: null
+    toc: no
+  bookdown::html_document2: default
+documentclass: scrartcl
+---
+
+# Setup
+
+```{r setup, message=FALSE}
+library(tidyverse)
+
+pwt <- haven::read_dta("~/Data/pwt90.dta")
+```
+
+# Solution 
+<!-- Your solution goes here -->
+
+
+
+
+
