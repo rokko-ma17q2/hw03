@@ -157,7 +157,7 @@ You can use this as a guide for the potential relationships to explore within th
 
 1) Filter out all the non-OECD countries from pwt and check for the evidence of convergence among OECD countries (reproduce the first section of this problem set). Comment on your findings.
 
-2) Choose either a year or a specific country from the pwt dataset. Fit an lm model of gdp per capita versus labour's share of capital. Comment on the output of your model.
+2) Choose either a year or a specific country from the pwt dataset. Fit an lm model of gdp per capita versus capital labour ratio $\frac{K}{L}$. Comment on the output of your model.
 
 3) Using the same subset as in (2) fit a bivariate model of both human capital and capital per labour. How does this model compare with the previous?
 
